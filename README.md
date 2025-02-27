@@ -10,7 +10,7 @@
 ## 🌟 Core Features
 
 ### 🕰️ Advanced Alarm System
-```markdown
+
 - **Screen Saver Mode**: Dims/Blacks out screen when idle (OLED-safe)
 - **Motion Wake**: Front camera detects movement to wake device
 - **Alarm Types**:
@@ -21,8 +21,7 @@
   | Recurring     | Custom schedules (cron-like rules)   |
   | Voiceprint    | Requires "Stop" in enrolled voice    |
 - **Customization**:
-  ```
-  ```yaml
+```yaml
   alarms:
     - title: "Morning Run"
       sound: nature_stream.mp3
@@ -30,42 +29,37 @@
       pre_wake: 
         lights: 10% over 30m
         thermostat: 22°C
-  ```
 ```
 
 ### 🎤 Voice & Presence
-```markdown
 - **Voice Imprint Auth**:
-  ```bash
+```bash
   # Enroll via 3 phrase repetition
   kortana-cli voice-enroll --user alice --phrases "stop alarm" "lights on" "emergency mute"
-  ```
+```
 - **Find My Device**:
-  ```
+```
   Shout "Kortana, ping!" within earshot → Device responds with unique LED pattern/sound
-  ``` 
+``` 
 - **Conversational Memory**:
-  ```
+```
   "Remind me to water plants when kitchen lights turn on"
   → Creates IoT-triggered reminder
-  ```
 ```
 
 ### 🏠 IoT Orchestration
-```markdown
 - **Google Home Integration**:
-  ```dart
+```dart
   final googleHome = GoogleHomeAPI(
     clientId: 'YOUR_CLIENT_ID',
     scopes: [GoogleHomeScopes.controlDevices],
   );
   await googleHome.setThermostat(deviceId: 'nest-123', temp: 21.5);
-  ```
+```
 - **Local Device Control**:
-  ```bash
+```bash
   # MQTT-based control for local devices
   kortana-cli iot --protocol mqtt --topic home/living-room/light --command dim=50%
-  ```
 ```
 
 ## 🛠️ Tech Stack
